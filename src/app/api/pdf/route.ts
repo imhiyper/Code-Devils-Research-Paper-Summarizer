@@ -27,11 +27,11 @@ export async function POST(req: Request) {
     ],
   });
 
+  let summarizedText = '';
   for await (const chunk of completion) {
-    console.log(chunk.choices[0].delta.content);
+    summarizedText += chunk.choices[0].delta.content;
   };
-
-  // const stream = OpenAIStream(response)
-
-  // return new StreamingTextResponse(stream)
+  
+  // Send back a response with the summarized text
+  return new Response(summarizedText, { status: 200 });
 }
