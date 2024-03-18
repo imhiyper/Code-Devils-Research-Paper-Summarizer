@@ -14,6 +14,7 @@ export default function UploadFile() {
   const [showFile, setShowFile] = useState(false);
   const [summarizedText, setSummerizedText] = useState("");
   const [keyPoints, setKeyPoints] = useState("");
+  const [audioUrl, setAudioUrl] = useState("");
 
   const handleFileUpload = async (event: { target: any }) => {
     console.log(event.target.files[0]);
@@ -80,6 +81,27 @@ export default function UploadFile() {
     }
   };
 
+  const handlePlayAudio = async () => {
+    try {
+      const text = `This is the summary: ${summarizedText}. This is the key points: ${keyPoints}`;
+      const response = await fetch("/api/audio", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: text,
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setAudioUrl(data.audioUrl);
+      } else {
+        console.error("Error:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <>
       <div className="bg-[#262626]">
@@ -133,6 +155,22 @@ export default function UploadFile() {
               >
                 Debrief a new file
               </button>
+              <div className="flex w-full justify-center">
+                <button
+                  onClick={handlePlayAudio}
+                  className="bg-indigo-500 transition-all duration-200 ease-in-out hover:bg-indigo-800 px-8 rounded-xl py-4 text-white mt-10"
+                >
+                  Play Audio
+                </button>
+              </div>
+              {audioUrl && (
+                <audio
+                  key={audioUrl}
+                  src={audioUrl}
+                  controls={true}
+                  className="mt-4 mx-auto"
+                ></audio>
+              )}
             </div>
             <div className="flex flex-col md:flex-row mx-24 justify-center mt-10 mb-20 gap-12 h-full">
               <div className="w-1/2 pb-24 h-full bg-gradient-to-br from-transparent via-white/5 to-white/10 border-white/10 border-2 rounded-lg">

@@ -1,5 +1,3 @@
-// TODO: We need a decided on LLM + .env for it (plus 'ai' module for streaming)
-
 import OpenAI from "openai";
 // import { OpenAIStream, StreamingTextResponse } from 'ai'
 
