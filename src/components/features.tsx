@@ -100,7 +100,7 @@ const CARDS: CardType[] = [
     description:
       "Upload your research paper and get a concise summary in seconds. SwiftDebrief analyzes the content and extracts the essential information for you.",
     ctaClasses: "bg-blue-300",
-    routeTo: "/dashboard",
+    routeTo: "/upload",
   },
   {
     id: 2,
@@ -109,7 +109,7 @@ const CARDS: CardType[] = [
     description:
       "Quickly grasp the main ideas of a research paper. SwiftDebrief identifies and highlights the key points, making it easy to understand the core concepts.",
     ctaClasses: "bg-green-300",
-    routeTo: "/dashboard",
+    routeTo: "/upload",
   },
   {
     id: 3,
@@ -118,7 +118,7 @@ const CARDS: CardType[] = [
     description:
       "Streamline your research process with SwiftDebrief. No more manual reading and note-taking. Get the information you need in a fraction of the time.",
     ctaClasses: "bg-orange-300",
-    routeTo: "/dashboard",
+    routeTo: "/upload",
   },
   {
     id: 4,
@@ -127,6 +127,6 @@ const CARDS: CardType[] = [
     description:
       "Listen to the summary and key points of research papers with SwiftDebrief's audio feature. Enjoy the convenience of having the insights read out loud to you.",
     ctaClasses: "bg-purple-300",
-    routeTo: "/dashboard",
+    routeTo: "/upload",
   },
 ];
