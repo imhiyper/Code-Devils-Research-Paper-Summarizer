@@ -29,7 +29,7 @@ const NavBar = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.995, rotate: "3.5deg" }}
-          onClick={() => (window.location.href = "/dashboard")}
+          onClick={() => (window.location.href = "/upload")}
           className="flex items-center gap-2 rounded-md bg-indigo-500 px-8 py-4 font-medium text-slate-50 transition-colors hover:bg-indigo-600"
         >
           <span>Get Started</span>
