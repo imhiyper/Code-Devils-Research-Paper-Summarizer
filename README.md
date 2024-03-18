@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SwiftDebrief
 
-## Getting Started
+SwiftDebrief is a revolutionary platform that simplifies research paper analysis. All you have to do is upload your research paper and get a concise summary in seconds. SwiftDebrief analyzes the content and extracts the essential information for you.
 
-First, run the development server:
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+
+SwiftDebrief is designed to revolutionize the process of analyzing research papers. By leveraging cutting-edge technologies, including Next.js, react-pdf, the OpenAI API, and framer-motion, SwiftDebrief offers a user-friendly platform for comprehending scholarly content with ease. Whether you're a student, researcher, or industry professional, SwiftDebrief empowers you to efficiently digest complex academic articles.
+
+## Features
+
+- **Instant Summaries:** Upload a research paper and get a concise summary in seconds. SwiftDebrief analyzes the content and extracts the essential information for you.
+- **Key Points Extraction:** Quickly grasp the main ideas of a research paper. SwiftDebrief identifies and highlights the key points, making it easy to understand the core concepts.
+- **Save Time and Effort:** Streamline your research process with SwiftDebrief. No more manual reading and note-taking. Get the information you need in a fraction of the time.
+- **Audio Summaries:** Listen to the summary and key points of research papers with SwiftDebrief's audio feature. Enjoy the convenience of having the insights read out loud to you.
+
+## Installation
+
+To run SwiftDebrief locally, follow these steps:
+
+1. Clone the repository:
+
+```bash
+https://github.com/ASU-CodeDevils/SwiftDebrief.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd SwiftDebrief
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Once SwiftDebrief is running, upload a research paper or provide a link to a paper you wish to analyze. The application will generate concise summaries, key points, and audio narration, enabling you to efficiently comprehend the content. Navigate through the original paper using the interactive PDF viewer to explore further details.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+We welcome contributions from the community to improve SwiftDebrief. To contribute, please follow these guidelines:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Fork the repository and create a new branch.
+- Make your changes and ensure that the code follows our coding standards.
+- Submit a pull request detailing the changes you've made and why they're necessary.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For major changes, please open an issue first to discuss the proposed modifications.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+SwiftDebrief is licensed under the [MIT License](LICENSE).
