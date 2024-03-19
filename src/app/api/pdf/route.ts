@@ -23,6 +23,7 @@ export async function POST(req: Request) {
         content: extractedText,
       },
     ],
+    max_tokens: 700,
   });
 
   const keyPointsCompletion = await openai.chat.completions.create({

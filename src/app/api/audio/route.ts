@@ -7,9 +7,6 @@ const openai = new OpenAI({
 });
 
 export async function POST(req: Request, res: Response) {
-  // NOTE: Is this considering we are passing as plain text?
-  // NOTE: If not we can pass as JSON and use req.json()
-  // const { text } = await req.json();
   const text = await req.text();
 
   try {
@@ -29,9 +26,11 @@ export async function POST(req: Request, res: Response) {
 
     const audioUrl = "/speech.mp3";
     console.log("audioUrl", audioUrl);
-    return new Response(JSON.stringify({ audioUrl }), { status: 200 })
+    return new Response(JSON.stringify({ audioUrl }), { status: 200 });
   } catch (error) {
     console.error("Error:", error);
-    return new Response(JSON.stringify({ error: "An error occurred" }), { status: 500 });
+    return new Response(JSON.stringify({ error: "An error occurred" }), {
+      status: 500,
+    });
   }
 }
