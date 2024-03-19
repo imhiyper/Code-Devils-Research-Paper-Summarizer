@@ -23,7 +23,7 @@ export async function POST(req: Request) {
         content: extractedText,
       },
     ],
-    max_tokens: 700,
+    max_tokens: 300,
   });
 
   const keyPointsCompletion = await openai.chat.completions.create({
@@ -33,13 +33,14 @@ export async function POST(req: Request) {
       {
         role: "system",
         content:
-          "Extract the key points from the provided research paper. Include the main research question, key findings, and implications. Present the key points as a bulleted list.",
+          "Extract the key points from the provided research paper. Include the main research question and key findings. Present the key points as a bulleted list.",
       },
       {
         role: "user",
         content: extractedText,
       },
     ],
+    max_tokens: 300,
   });
 
   let summarizedText = "";
