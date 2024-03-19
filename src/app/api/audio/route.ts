@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import fs from "fs";
 import path from "path";
@@ -7,8 +6,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function POST(req: any, res: any) {
-  const { text } = await req.text();
+export async function POST(req: Request, res: Response) {
+  // NOTE: Is this considering we are passing as plain text?
+  // NOTE: If not we can pass as JSON and use req.json()
+  // const { text } = await req.json();
+  const text = await req.text();
 
   try {
     const speechFile = path.resolve(
@@ -27,9 +29,9 @@ export async function POST(req: any, res: any) {
 
     const audioUrl = "/speech.mp3";
     console.log("audioUrl", audioUrl);
-    return NextResponse.json({ audioUrl });
+    return new Response(JSON.stringify({ audioUrl }), { status: 200 })
   } catch (error) {
     console.error("Error:", error);
-    return NextResponse.json({ error: "An error occurred" }, { status: 500 });
+    return new Response(JSON.stringify({ error: "An error occurred" }), { status: 500 });
   }
 }
